@@ -38,4 +38,66 @@ docker run -d -p 9001:9001 --name portainer_agent --restart=always -v /var/run/d
 
 ### Advanced Options
 
+CLI Configuration Options
 
+Portainer can be easily tuned using CLI flags.
+
+#### Admin password
+
+***From the command line***
+
+Portainer allows you to specify a bcrypt encrypted password from the command line for the admin account. You need to generate the bcrypt encrypted password first.
+
+You can generate the encrypted password with the following command if you have installed apache2-utils package:
+
+```
+htpasswd -nb -B admin "your-password" | cut -d ":" -f 2
+```
+
+If your system does not have the mentioned command, you can run a container to run the command:
+
+```
+docker run --rm httpd:2.4-alpine htpasswd -nbB admin "your-password" | cut -d ":" -f 2
+```
+
+To specify the admin password from the command line, start Portainer with the --admin-password flag:
+
+```
+docker run -d -p 9000:9000 -p 8000:8000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer-ce --admin-password='$2y$05$8oz75U8m5tI/xT4P0NbSHeE7WyRzOWKRBprfGotwDkhBOGP/u802u'
+```
+
+***Inside a file***
+
+You can also store the plaintext password inside a file and use the --admin-password-file flag:
+
+Add your password to a file running the following command:
+
+```
+echo -n mypassword > /tmp/portainer_password
+```
+
+Now you can start the Portainer container by running:
+
+```
+docker run -d -p 9000:9000 -p 8000:8000 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/portainer_password:/tmp/portainer_password portainer/portainer-ce --admin-password-file /tmp/portainer_password
+```
+
+This works well with Docker Swarm and Docker secrets too:
+
+```
+echo -n mypassword | docker secret create portainer-pass -
+
+docker service create \
+    --name portainer \
+    --secret portainer-pass \
+    --publish 9000:9000 \
+    --publish 8000:8000 \
+    --replicas=1 \
+    --constraint 'node.role == manager' \
+    --mount type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock \
+    portainer/portainer-ce \
+    --admin-password-file '/run/secrets/portainer-pass' \
+    -H unix:///var/run/docker.sock
+```
+    
+Note: This will automatically create an administrator account called admin with the specified password.
