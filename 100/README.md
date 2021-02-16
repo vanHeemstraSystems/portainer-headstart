@@ -148,6 +148,8 @@ Using the --templates flag you can specify an URL where the template file can be
 docker run -d -p 9000:9000 -p 8000:8000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer-ce --templates http://my-host.my-domain/templates.json
 ```
 
+Suggestion: You can host your template files in [Github](https://www.github.com/)
+
 #### Available flags
 The following CLI flags are available:
 
