@@ -151,22 +151,23 @@ docker run -d -p 9000:9000 -p 8000:8000 -v /var/run/docker.sock:/var/run/docker.
 #### Available flags
 The following CLI flags are available:
 
---admin-password: Specify a bcrypt hashed password for the admin user
---admin-password-file: Path to the file containing the password for the admin user
---bind, -p: Address and port to serve Portainer (default: :9000)
---data, -d: Directory where Portainer data will be stored (default: /data on Linux, C:\data on Windows)
---edge-compute: Automatically enable edge-compute features
---hide-label, -l: Hide containers with a specific label in the UI
---host, -H: Docker daemon endpoint
---logo: URL to a picture to be displayed as a logo in the UI, use Portainer logo if not specified
---snapshot-interval: Time interval between two endpoint snapshot jobs expressed as a string, e.g. 30s, 5m, 1h… as supported by the time.ParseDuration method (default: 5m)
---ssl: Secure Portainer instance using SSL (default: false)
---sslcert: Path to the SSL certificate used to secure the Portainer instance (default: /certs/portainer.crt, C:\certs\portainer.crt on Windows)
---sslkey: Path to the SSL key used to secure the Portainer instance (default: /certs/portainer.key, C:\certs\portainer.key on Windows)
---templates, -t: URL to templates (apps) definitions
---tlscacert: Path to the CA (default: /certs/ca.pem on Linux, C:\certs\ca.pem on Windows)
---tlscert: Path to the TLS certificate file (default: /certs/cert.pem, C:\certs\cert.pem on Windows)
---tlskey: Path to the TLS key (default: /certs/key.pem, C:\certs\key.pem on Windows)
---tlsverify: TLS support (default: false)
---tunnel-port: Specify an alternate tunnel port to use with the Edge agent. Use --tunnel-port 8001 with -p 8001:8001 to make the Edge agent communicate on port 8001
+* --admin-password: Specify a bcrypt hashed password for the admin user
+* --admin-password-file: Path to the file containing the password for the admin user
+* --bind, -p: Address and port to serve Portainer (default: :9000)
+* --data, -d: Directory where Portainer data will be stored (default: /data on Linux, C:\data on Windows)
+* --edge-compute: Automatically enable edge-compute features
+* --hide-label, -l: Hide containers with a specific label in the UI
+* --host, -H: Docker daemon endpoint
+* --logo: URL to a picture to be displayed as a logo in the UI, use Portainer logo if not specified
+* --snapshot-interval: Time interval between two endpoint snapshot jobs expressed as a string, e.g. 30s, 5m, 1h… as supported by the time.ParseDuration method (default: 5m)
+* --ssl: Secure Portainer instance using SSL (default: false)
+* --sslcert: Path to the SSL certificate used to secure the Portainer instance (default: /certs/portainer.crt, C:\certs\portainer.crt on Windows)
+* --sslkey: Path to the SSL key used to secure the Portainer instance (default: /certs/portainer.key, C:\certs\portainer.key on Windows)
+* --templates, -t: URL to templates (apps) definitions
+* --tlscacert: Path to the CA (default: /certs/ca.pem on Linux, C:\certs\ca.pem on Windows)
+* --tlscert: Path to the TLS certificate file (default: /certs/cert.pem, C:\certs\cert.pem on Windows)
+* --tlskey: Path to the TLS key (default: /certs/key.pem, C:\certs\key.pem on Windows)
+* --tlsverify: TLS support (default: false)
+* --tunnel-port: Specify an alternate tunnel port to use with the Edge agent. Use --tunnel-port 8001 with -p 8001:8001 to make the Edge agent communicate on port 8001
+
 Suggestion: You can host your template files in Github
