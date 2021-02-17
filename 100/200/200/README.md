@@ -49,7 +49,7 @@ certificatesResolvers:
 
 traefik.yml
 
-NOTE: Adjust the ```email``` to your email address.
+NOTE: Please change the email address for the certificatesresolvers.
 
 === WE ARE HERE ===
 
