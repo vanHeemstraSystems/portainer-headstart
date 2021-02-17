@@ -54,6 +54,25 @@ traefik.yml
 
 NOTE: Please change the email address for the certificatesresolvers.
 
+Create a file for the central configuration:
+
+```
+touch /opt/containers/traefik/data/config.yml
+```
+
+Add a middleware to redirect http to https:
+
+```
+http:
+  middlewares:
+    https-redirect:
+      redirectScheme:
+        scheme: https
+```
+/opt/containers/traefik/data/config.yml
+
+The above ```config.yml``` file will be mounted in the /opt/containers/traefik/docker-compose.yml file of Traefik.
+
 If not yet created, create a Docker Compose file for Traefik as k8s/traefik/docker-compose.yml:
 
 ```
