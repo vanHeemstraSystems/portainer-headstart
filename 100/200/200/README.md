@@ -85,6 +85,12 @@ http:
         - "10.0.0.0/24"
         - "192.168.0.0/16"
         - "172.0.0.0/8"
+
+    secured:
+      chain:
+        middlewares:
+        - default-whitelist
+        - default-headers
 ```
 /opt/containers/traefik/data/config.yml
 
