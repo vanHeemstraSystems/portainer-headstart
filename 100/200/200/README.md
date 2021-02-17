@@ -26,6 +26,7 @@ Now we create the basic Traefik configuration file (/opt/containers/traefik/data
 ```
 api:
   dashboard: true
+  debug: true
 
 entryPoints:
   http:
@@ -37,7 +38,9 @@ providers:
   docker:
     endpoint: "unix:///var/run/docker.sock"
     exposedByDefault: false
-
+  file:
+    filename: /config.yml
+    
 certificatesResolvers:
   http:
     acme:
