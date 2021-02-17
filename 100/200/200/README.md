@@ -4,7 +4,7 @@
 
 Let’s get started by setting up Traefik.
 
-First, create a directory for our containers:
+First, create a directory for our container:
 
 ```
 $ sudo mkdir -p /opt/containers/traefik
