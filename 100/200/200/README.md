@@ -21,7 +21,7 @@ touch /opt/containers/traefik/data/traefik.yml
 
 The ```acme.json``` file is the storage file for the HTTPS certificates.
 
-Now we create the basic Traefik configuration file (/opt/containers/traefik/data/traefik.yaml):
+Now we create the basic Traefik configuration file (/opt/containers/traefik/data/traefik.yml):
 
 ```
 api:
@@ -47,7 +47,7 @@ certificatesResolvers:
         entryPoint: http
 ```
 
-traefik.yaml
+traefik.yml
 
 NOTE: Adjust the ```email``` to your email address.
 
