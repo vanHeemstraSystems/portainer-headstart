@@ -2,7 +2,9 @@
 
 Based on "Deploying Portainer CE in Docker" at https://documentation.portainer.io/v2.0/deploy/ceinstalldocker/
 
-## Deploying Portainer CE in Docker
+## 100 Deploying Portainer CE in Docker
+
+See [README.md](./100/README.md)
 
 Portainer is comprised of two elements, the Portainer Server, and the Portainer Agent. Both elements run as lightweight Docker containers on a Docker engine or within a Swarm cluster. Due to the nature of Docker, there are many possible deployment scenarios, however, we have detailed the most common below. Please use the scenario that matches your configuration.
 
@@ -171,3 +173,7 @@ The following CLI flags are available:
 * --tlskey: Path to the TLS key (default: /certs/key.pem, C:\certs\key.pem on Windows)
 * --tlsverify: TLS support (default: false)
 * --tunnel-port: Specify an alternate tunnel port to use with the Edge agent. Use --tunnel-port 8001 with -p 8001:8001 to make the Edge agent communicate on port 8001
+
+## 200 Deploying Portainer CE & Traefik in Docker
+
+See [README.md](./200/README.md)
