@@ -50,7 +50,7 @@ certificatesResolvers:
         entryPoint: http
 ```
 
-traefik.yml
+/opt/containers/traefik/data/traefik.yml
 
 NOTE: Please change the email address for the certificatesresolvers.
 
