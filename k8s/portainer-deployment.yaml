@@ -2,7 +2,7 @@ version: '2'
 
 services:
   portainer:
-    image: oasis-pwc/portainer
+    image: vanheemstrasystems/portainer
     restart: always
     ports:
       - "9000:9000"
