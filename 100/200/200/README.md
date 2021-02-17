@@ -21,5 +21,33 @@ touch /opt/containers/traefik/data/traefik.yml
 
 The ```acme.json``` file is the storage file for the HTTPS certificates.
 
+Now we create the basic Traefik configuration file:
+
+```
+api:
+  dashboard: true
+
+entryPoints:
+  http:
+    address: ":80"
+  https:
+    address: ":443"
+
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
+
+certificatesResolvers:
+  http:
+    acme:
+      email: willem@vanheemstrasystems.com
+      storage: acme.json
+      httpChallenge:
+        entryPoint: http
+```
+
+NOTE: Adjust the ```email``` to your email address.
+
 === WE ARE HERE ===
 
