@@ -68,6 +68,23 @@ http:
     https-redirect:
       redirectScheme:
         scheme: https
+
+    default-headers:
+      headers:
+        frameDeny: true
+        sslRedirect: true
+        browserXssFilter: true
+        contentTypeNosniff: true
+        forceSTSHeader: true
+        stsIncludeSubdomains: true
+        stsPreload: true
+
+    default-whitelist:
+      ipWhiteList:
+        sourceRange:
+        - "10.0.0.0/24"
+        - "192.168.0.0/16"
+        - "172.0.0.0/8"
 ```
 /opt/containers/traefik/data/config.yml
 
