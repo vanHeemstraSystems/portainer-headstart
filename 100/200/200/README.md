@@ -107,7 +107,7 @@ Change ```<USER>``` and ```<PASSWORD>```.
 echo $(htpasswd -nb <USER> <PASSWORD>) | sed -e s/\\$/\\$\\$/g                             
 ```
 
-For example USER=admin, PASSWORD=admin
+For example USER=admin, PASSWORD=admin123
 
 Once that’s done we can create the proxy network and fire up Traefik:
 
