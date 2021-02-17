@@ -94,6 +94,9 @@ http:
 ```
 /opt/containers/traefik/data/config.yml
 
+- The ```default-header``` middleware sets some basic security headers.
+- The ```default-whitelist``` middleware allows only internal IP addresses.
+
 The above ```config.yml``` file will be mounted in the /opt/containers/traefik/docker-compose.yml file of Traefik.
 
 If not yet created, create a Docker Compose file for Traefik as k8s/traefik/docker-compose.yml:
