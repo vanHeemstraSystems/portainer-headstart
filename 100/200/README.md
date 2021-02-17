@@ -12,7 +12,7 @@ In order to follow along, you need these things:
 
 ## 200 Traefik
 
-See [README.md](./100/README.md)
+See [README.md](./200/README.md)
 
 ## 300 Portainer
 
