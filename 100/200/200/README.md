@@ -109,6 +109,10 @@ echo $(htpasswd -nb <USER> <PASSWORD>) | sed -e s/\\$/\\$\\$/g
 
 For example USER=admin, PASSWORD=admin123
 
+PASSWORD is now encrypted to ***$$apr1$$/MyogfWm$$njMYmgXfFMfFL1AxHg/z00***
+
+Note: If htpasswd is not found, you can install it on RHEL as follows: ```yum install httpd-tools```
+
 Once that’s done we can create the proxy network and fire up Traefik:
 
 ```
