@@ -101,13 +101,15 @@ In addition, change the credentials at ```"traefik.http.middlewares.traefik-auth
 
 To generate htpasswd credentials, you can use the following command. 
 
-Change <USER> and <PASSWORD.
+Change ```<USER>``` and ```<PASSWORD>```.
                              
 ```
 echo $(htpasswd -nb <USER> <PASSWORD>) | sed -e s/\\$/\\$\\$/g                             
 ```
 
-Once that’s done we can create the proxy network an fire up Traefik:
+For example USER=admin, PASSWORD=admin
+
+Once that’s done we can create the proxy network and fire up Traefik:
 
 ```
 $ docker network create proxy
