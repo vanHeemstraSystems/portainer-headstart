@@ -17,6 +17,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./data/traefik.yml:/traefik.yml:ro
       - ./data/acme.json:/acme.json
+      - ./data/config.yml:/config.yml:ro
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.traefik.entrypoints=http"
@@ -30,6 +31,7 @@ services:
       - "traefik.http.routers.traefik-secure.tls=true"
       - "traefik.http.routers.traefik-secure.tls.certresolver=http"
       - "traefik.http.routers.traefik-secure.service=api@internal"
+      - "traefik.http.services.traefik.loadbalancer.server.port=8080"
 
 networks:
   proxy:
