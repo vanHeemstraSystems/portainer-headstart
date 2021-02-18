@@ -9,6 +9,7 @@ In order to follow along, you need these things:
 - Docker Compose
 - A domain
 - Ports 80 and 443 forwarded to your Docker host
+- An application name; here we choose the name: ***com.vanheemstrasystems.portainer***
 
 ## 200 Traefik
 
