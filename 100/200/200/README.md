@@ -7,21 +7,21 @@ Let’s get started by setting up Traefik.
 First, create a directory for our container:
 
 ```
-$ sudo mkdir -p /com.vanheemstrasystems.portainer/containers/traefik
+$ sudo mkdir -p /portainer-headstart/containers/traefik
 ```
 
 Create the data folder and config files for Traefik:
 
 ```
-$ sudo mkdir -p /com.vanheemstrasystems.portainer/containers/traefik/data
-touch /com.vanheemstrasystems.portainer/containers/traefik/data/acme.json
-chmod 600 /com.vanheemstrasystems.portainer/containers/traefik/data/acme.json
-touch /com.vanheemstrasystems.portainer/containers/traefik/data/traefik.yml
+$ sudo mkdir -p /portainer-headstart/containers/traefik/data
+touch /portainer-headstart/containers/traefik/data/acme.json
+chmod 600 /portainer-headstart/containers/traefik/data/acme.json
+touch /portainer-headstart/containers/traefik/data/traefik.yml
 ```
 
 The ```acme.json``` file is the storage file for the HTTPS certificates.
 
-Now we create the basic Traefik configuration file (/com.vanheemstrasystems.portainer/containers/traefik/data/traefik.yml):
+Now we create the basic Traefik configuration file (/portainer-headstart/containers/traefik/data/traefik.yml):
 
 ```
 api:
@@ -50,14 +50,14 @@ certificatesResolvers:
         entryPoint: http
 ```
 
-/com.vanheemstrasystems.portainer/containers/traefik/data/traefik.yml
+/portainer-headstart/containers/traefik/data/traefik.yml
 
 NOTE: Please change the email address for the certificatesresolvers.
 
 Create a file for the central configuration:
 
 ```
-touch /com.vanheemstrasystems.portainer/containers/traefik/data/config.yml
+touch /portainer-headstart/containers/traefik/data/config.yml
 ```
 
 Add a middleware to redirect http to https:
@@ -92,14 +92,14 @@ http:
         - default-whitelist
         - default-headers
 ```
-/com.vanheemstrasystems.portainer/containers/traefik/data/config.yml
+/portainer-headstart/containers/traefik/data/config.yml
 
 - The ```default-header``` middleware sets some basic security headers.
 - The ```default-whitelist``` middleware allows only internal IP addresses.
 
-The above ```config.yml``` file will be mounted in the /com.vanheemstrasystems.portainer/containers/traefik/docker-compose.yml file of Traefik.
+The above ```config.yml``` file will be mounted in the /portainer-headstart/containers/traefik/docker-compose.yml file of Traefik.
 
-If not yet created, create a Docker Compose file for Traefik as /com.vanheemstrasystems.portainer/containers/traefik/docker-compose.yml:
+If not yet created, create a Docker Compose file for Traefik as /portainer-headstart/containers/traefik/docker-compose.yml:
 
 ```
 version: '3'
@@ -165,7 +165,7 @@ Once that’s done we can create the proxy network and fire up Traefik:
 
 ```
 $ docker network create proxy
-cd /com.vanheemstrasystems.portainer/containers/traefik
+cd /portainer-headstart/containers/traefik
 $ docker-compose up -d
 ```
 
