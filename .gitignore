@@ -2,4 +2,4 @@
 /containers/traefik/data/acme.json
 /containers/traefik/data/config.yml
 /containers/traefik/data/traefik.yml
-
+/containers/portainer/docker-compose.yml
