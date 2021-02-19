@@ -106,7 +106,7 @@ version: '3'
 
 services:
   traefik:
-    image: traefik:v2.0
+    image: traefik:v2.2
     container_name: traefik
     restart: unless-stopped
     security_opt:
