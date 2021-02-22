@@ -47,6 +47,6 @@ networks:
     external: true
 ```
 
-Please change the host rule at "traefik.http.routers.portainer.rule=Host(`portainer.example.com`)" and "traefik.http.routers.portainer-secure.rule=Host(`portainer.example.com`)" to your subdomain. Here: portainer.vanheemstrasystems.com
+Please change the host rule at "traefik.http.routers.portainer.rule=Host(`portainer.example.com`)" and "traefik.http.routers.portainer-secure.rule=Host(`portainer.example.com`)" to your subdomain. Here: ***portainer.vanheemstrasystems.com***
 
 === WE ARE HERE ===
