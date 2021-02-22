@@ -49,4 +49,11 @@ networks:
 
 Please change the host rule at "traefik.http.routers.portainer.rule=Host(`portainer.example.com`)" and "traefik.http.routers.portainer-secure.rule=Host(`portainer.example.com`)" to your subdomain. Here: ***portainer.vanheemstrasystems.com***
 
-=== WE ARE HERE ===
+Fire up Portainer:
+
+```
+cd /opt/containers/portainer
+docker-compose up -d
+```
+
+You can now visit Portainer by browsing to ***portainer.vanheemstrasystems.com***
