@@ -1,0 +1,3 @@
+# 200 - Method 2: Resetting the admin password if Portainer runs as a stack/service
+
+More ...
