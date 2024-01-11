@@ -2,7 +2,7 @@
 
 You would typically use this method if you run the Portainer Server on Docker Standalone.
 
-First, go to our  in GitHub, then stop the Portainer container by running this command:
+First, go to our [reset password container helper](https://github.com/portainer/helper-reset-password) in GitHub, then stop the Portainer container by running this command:
 ```
 docker stop "id-portainer-container"
 ```
