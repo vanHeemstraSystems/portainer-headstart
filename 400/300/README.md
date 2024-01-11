@@ -1,0 +1,3 @@
+# 300 - Method 3: Resetting the admin password if Portainer is deployed in a Kubernetes cluster
+
+More ...
