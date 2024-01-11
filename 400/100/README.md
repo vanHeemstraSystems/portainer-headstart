@@ -1,0 +1,3 @@
+# 100 - Method 1: Resetting the admin password if Portainer runs as a container
+
+More ...
